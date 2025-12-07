@@ -3,7 +3,7 @@
 ---
 
 **Author:** Yunqi Ji  
-**Role:** First-year CS student building the habits and structure of an engineer
+**Role:** First-year CS student building the habits and structure of an engineer  
 **Version:** 1.0  
 **Last Updated:** 2025-12-07  
 
