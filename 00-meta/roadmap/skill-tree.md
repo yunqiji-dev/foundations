@@ -3,15 +3,15 @@
 
 **Author:** Yunqi Ji  
 **Role:** First-year CS student  
-Version: 0.1  
-Last Updated: 2025-12-07  
+**Version:** 0.1  
+**Last Updated:** 2025-12-07  
 
 ---
 ## 0. Why  This Exists
 
 I entered university with gaps in both English and CS foundations.
 
-In December, I finally built a study system (Obsidian + GitHub + structure repositories).
+In December, I finally built a study system (Obsidian + GitHub + structure repositories).  
 At that moment, I realized I needed something simple — a small map I can follow when things still feel new and a bit chaotic.
 
 This skill tree isn't for showing off.
