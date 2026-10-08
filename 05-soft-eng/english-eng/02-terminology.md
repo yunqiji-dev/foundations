@@ -42,3 +42,35 @@
 | defer                                       | 延迟调用                 | Runs when the surrounding function returns; arguments are evaluated immediately   |
 | LIFO (last in, first out)                   | 后进先出                 | Deferred calls are pushed onto a stack and run in reverse order                   |
 
+
+
+
+## More types
+
+| English | 中文 | Note |
+|---|---|---|
+| pointer | 指针 | Holds the memory address of a value; zero value is `nil` |
+| address-of operator | 取地址运算符 | `&x` generates a pointer to `x` |
+| dereference | 解引用 | `*p` reads or sets the value the pointer points to |
+| pointer arithmetic | 指针运算 | Go has none, unlike C |
+| struct | 结构体 | A collection of fields |
+| field | 字段 | Accessed with a dot; `p.X` also works when `p` is a pointer to a struct |
+| struct literal | 结构体字面量 | `Vertex{1, 2}` or `Vertex{X: 1}`; unnamed fields get their zero value |
+| array | 数组 | Fixed length; the length is part of the type, so `[3]int` and `[4]int` differ |
+| slice | 切片 | A dynamically-sized view into an array; stores no data itself |
+| half-open range | 左闭右开区间 | `a[low:high]` includes `low` and excludes `high` |
+| underlying array | 底层数组 | Changing a slice element changes the array, and every other slice sharing it |
+| slice literal | 切片字面量 | `[]int{1, 2, 3}`; builds the array and a slice that references it |
+| slice defaults | 切片默认边界 | Omitted bounds default to `0` and the length: `a[:]`, `a[:5]`, `a[2:]` |
+| length / capacity | 长度 / 容量 | `len(s)` is the number of elements; `cap(s)` counts from the slice's first element to the end of the array |
+| nil slice | nil 切片 | The zero value of a slice; length and capacity are 0 |
+| make | make（内置函数） | `make([]int, 0, 5)` allocates a zeroed array and returns a slice of it |
+| slices of slices | 二维切片 | A slice whose elements are slices |
+| append | 追加 | Returns a new slice; grows into a bigger array when capacity runs out, so write `s = append(s, x)` |
+| range | 遍历 | `for i, v := range s` gives the index and a copy of the element |
+| blank identifier | 空白标识符 | `_` discards a value you do not need |
+| map | 映射（哈希表） | Maps keys to values; a `nil` map cannot be written to, so create it with `make` |
+| map literal | 映射字面量 | `map[string]int{"a": 1}`; keys are required |
+| key / value | 键 / 值 | Insert `m[k] = v`, read `m[k]`, remove `delete(m, k)` |
+| comma ok | 存在性检查 | `v, ok := m[k]`; `ok` is `false` when the key is absent |
+| function value | 函数值 | Functions are values and can be passed as arguments or returned |
