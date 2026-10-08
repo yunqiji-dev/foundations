@@ -74,3 +74,22 @@
 | key / value | 键 / 值 | Insert `m[k] = v`, read `m[k]`, remove `delete(m, k)` |
 | comma ok | 存在性检查 | `v, ok := m[k]`; `ok` is `false` when the key is absent |
 | function value | 函数值 | Functions are values and can be passed as arguments or returned |
+
+
+
+## Algorithms
+
+| English | 中文 | Note |
+|---|---|---|
+| algorithm | 算法 | A clear sequence of steps that solves a problem |
+| brute force | 暴力解法 | Try every possibility; usually nested loops; correct but often slow |
+| time complexity | 时间复杂度 | How the number of steps grows as the input size n grows |
+| space complexity | 空间复杂度 | How much extra memory grows with n; the input itself is not counted |
+| Big O notation | 大 O 表示法 | Keeps only the fastest-growing term, e.g. `O(n)`, `O(n²)` |
+| constant time | 常数时间 | `O(1)`: same cost no matter how large n is, e.g. a map lookup |
+| linear time | 线性时间 | `O(n)`: one pass over the input |
+| quadratic time | 平方时间 | `O(n²)`: nested loops over the input; too slow when n reaches 10⁵ |
+| constraints | 约束条件 | The input limits on the problem page; tell you which complexity will pass |
+| hash table | 哈希表 | Go's `map`; insert and look up in `O(1)` on average |
+| space-time trade-off | 空间换时间 | Use extra memory, such as a map, to cut the running time |
+| Time Limit Exceeded (TLE) | 超时 | LeetCode's result when a solution is too slow |
