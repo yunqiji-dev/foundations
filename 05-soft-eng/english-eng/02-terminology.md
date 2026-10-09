@@ -93,3 +93,34 @@
 | hash table | 哈希表 | Go's `map`; insert and look up in `O(1)` on average |
 | space-time trade-off | 空间换时间 | Use extra memory, such as a map, to cut the running time |
 | Time Limit Exceeded (TLE) | 超时 | LeetCode's result when a solution is too slow |
+
+
+
+
+## Methods and interfaces
+
+| English | 中文 | Note |
+|---|---|---|
+| method | 方法 | A function with a receiver argument |
+| receiver | 接收者 | Written between `func` and the method name: `func (v Vertex) Abs() float64` |
+| value receiver | 值接收者 | The method works on a copy; changes do not affect the original |
+| pointer receiver | 指针接收者 | `func (v *Vertex) Scale(f float64)`; the method can modify the original and avoids copying |
+| pointer indirection | 自动取址 / 解引用 | Go converts `v.Scale(5)` to `(&v).Scale(5)` and `p.Abs()` to `(*p).Abs()` automatically |
+| method on a non-struct type | 非结构体类型的方法 | Allowed on any type defined in the same package, e.g. `type MyFloat float64` |
+| interface | 接口 | A type defined by a set of method signatures |
+| implicit implementation | 隐式实现 | A type implements an interface just by having its methods; no `implements` keyword |
+| interface value | 接口值 | Holds a pair: a concrete value and its concrete type |
+| concrete type | 具体类型 | The actual type stored inside an interface value |
+| nil underlying value | 底层值为 nil | The method is still called with a nil receiver; the interface itself is not nil |
+| nil interface value | nil 接口值 | Holds neither value nor type; calling a method on it causes a run-time error |
+| empty interface | 空接口 | `interface{}` or `any`; can hold a value of any type |
+| type assertion | 类型断言 | `t, ok := i.(T)`; without `ok`, a wrong type triggers a panic |
+| panic | 运行时恐慌 | A run-time error that stops the program unless recovered |
+| type switch | 类型分支 | `switch v := i.(type)`; picks a case by the concrete type |
+| Stringer | Stringer 接口 | `String() string`; `fmt` uses it to print a value |
+| error | 错误 | Built-in interface with `Error() string`; check with `if err != nil` |
+| custom error type | 自定义错误类型 | Any type with an `Error() string` method can be returned as an `error` |
+| io.Reader | 读取器接口 | `Read(b []byte) (n int, err error)`; fills `b` and returns how many bytes were read |
+| io.EOF | 文件结束 | The error a Reader returns when there is no more data |
+| wrapping a Reader | 包装读取器 | A Reader that reads from another Reader and changes the data, as in rot13Reader |
+| image.Image | 图像接口 | Defined by `ColorModel`, `Bounds` and `At` methods |
