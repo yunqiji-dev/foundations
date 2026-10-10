@@ -124,3 +124,15 @@
 | io.EOF | 文件结束 | The error a Reader returns when there is no more data |
 | wrapping a Reader | 包装读取器 | A Reader that reads from another Reader and changes the data, as in rot13Reader |
 | image.Image | 图像接口 | Defined by `ColorModel`, `Bounds` and `At` methods |
+
+
+
+## Generics
+
+| English        | 中文   | Note                                                                                          |
+| -------------- | ---- | --------------------------------------------------------------------------------------------- |
+| generics       | 泛型   | Write one function or type that works with many types                                         |
+| type parameter | 类型参数 | Declared in square brackets before the parameters: `func Index[T comparable](s []T, x T) int` |
+| constraint     | 类型约束 | Limits which types a type parameter accepts, such as `any` or `comparable`                    |
+| comparable     | 可比较  | A built-in constraint for types that support `==` and `!=`                                    |
+| generic type   | 泛型类型 | A type with a type parameter: `type List[T any] struct { next *List[T]; val T }`              |
