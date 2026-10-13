@@ -136,3 +136,30 @@
 | constraint     | 类型约束 | Limits which types a type parameter accepts, such as `any` or `comparable`                    |
 | comparable     | 可比较  | A built-in constraint for types that support `==` and `!=`                                    |
 | generic type   | 泛型类型 | A type with a type parameter: `type List[T any] struct { next *List[T]; val T }`              |
+
+
+
+## Concurrency
+
+| English | 中文 | Note |
+|---|---|---|
+| concurrency | 并发 | Structuring a program as tasks that can make progress independently |
+| parallelism | 并行 | Tasks actually running at the same instant on multiple CPU cores |
+| goroutine | 协程（goroutine） | A lightweight thread managed by the Go runtime; start one with `go f(x)` |
+| Go runtime | Go 运行时 | Schedules goroutines onto OS threads |
+| shared memory | 共享内存 | Goroutines run in the same address space, so access to shared data must be synchronized |
+| channel | 通道 | A typed conduit created with `make(chan int)` |
+| send / receive | 发送 / 接收 | `ch <- v` sends; `v := <-ch` receives; data flows in the direction of the arrow |
+| blocking | 阻塞 | Sends and receives wait until the other side is ready, which lets goroutines synchronize without explicit locks |
+| unbuffered channel | 无缓冲通道 | `make(chan int)`; every send waits for a matching receive |
+| buffered channel | 带缓冲通道 | `make(chan int, 100)`; sends block only when the buffer is full, receives only when it is empty |
+| deadlock | 死锁 | Every goroutine is blocked; the runtime stops with "all goroutines are asleep" |
+| close | 关闭（通道） | Only the sender should close; sending on a closed channel causes a panic |
+| range over a channel | 遍历通道 | `for v := range ch` keeps receiving until the channel is closed |
+| comma-ok idiom | 逗号 ok 写法 | `v, ok := <-ch`; `ok` is `false` once the channel is closed and empty |
+| select statement | select 语句 | Waits on several channel operations and runs whichever is ready; picks at random if several are |
+| default case | 默认分支 | In `select`, runs when no other case is ready; used for non-blocking sends and receives |
+| mutual exclusion | 互斥 | Only one goroutine can access a variable at a time |
+| mutex | 互斥锁 | `sync.Mutex` with `Lock` and `Unlock` |
+| critical section | 临界区 | The code between `Lock` and `Unlock` |
+| data race | 数据竞争 | Two goroutines access the same variable at once and at least one writes; detect with `go run -race` |
